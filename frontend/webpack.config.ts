@@ -1,8 +1,9 @@
 import path from "path";
+import HtmlWebpackPlugin from "html-webpack-plugin";
 
 export default (env: any) => {
   return {
-    entry: "./src/index.ts",
+    entry: "./src/index.tsx",
     module: {
       rules: [
         {
@@ -20,5 +21,10 @@ export default (env: any) => {
       path: path.resolve(__dirname, "dist"),
       clean: true,
     },
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, "public", "index.html"),
+      }),
+    ],
   };
 };
