@@ -1,8 +1,15 @@
+/// <reference path="node_modules/webpack-dev-server/types/lib/Server.d.ts"/>
+import type { Configuration } from "webpack";
 import path from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
-export default (env: any) => {
+type WebpackEnv = {
+  mode: "development" | "production";
+};
+
+export default (env: WebpackEnv): Configuration => {
   return {
+    mode: env.mode,
     entry: "./src/index.tsx",
     module: {
       rules: [
@@ -26,5 +33,14 @@ export default (env: any) => {
         template: path.resolve(__dirname, "public", "index.html"),
       }),
     ],
+    devServer: {
+      port: 3000,
+      hot: true,
+      historyApiFallback: true,
+      open: true,
+      client: {
+        webSocketURL: "auto://0.0.0.0:0/ws",
+      },
+    },
   };
 };
