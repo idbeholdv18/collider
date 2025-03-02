@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+input {
+  all: unset;
+}
+
+:root {
+  --foreground-contranst: #ffffff;
+  --foreground-primary: #9f9f9f;
+  --background-contranst: #000000;
+  --background-primary: #0d0d0d;
+  --border-primary: #1e1e1e;
+  --link-primary: #2c80ff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  @apply text-foreground-primary;
+}
