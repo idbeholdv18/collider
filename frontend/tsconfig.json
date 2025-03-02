@@ -8,8 +8,14 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "outDir": "./dist/"
+    "strict": true,
+    "outDir": "./dist/",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
+
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
