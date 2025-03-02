@@ -11,6 +11,12 @@ export default (env: WebpackEnv): Configuration => {
   return {
     mode: env.mode,
     entry: "./src/index.tsx",
+    output: {
+      filename: "[contenthash].[name].js",
+      path: path.resolve(__dirname, "dist"),
+      clean: true,
+      publicPath: "/",
+    },
     module: {
       rules: [
         {
@@ -18,15 +24,18 @@ export default (env: WebpackEnv): Configuration => {
           use: "ts-loader",
           exclude: /node_modules/,
         },
+        {
+          test: /\.css$/i,
+          use: ["style-loader", "css-loader", "postcss-loader"],
+        },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif|ogg|mp3|wav)$/i,
+          type: "asset/resource",
+        },
       ],
     },
     resolve: {
       extensions: [".tsx", ".ts", ".js"],
-    },
-    output: {
-      filename: "[contenthash].[name].js",
-      path: path.resolve(__dirname, "dist"),
-      clean: true,
     },
     plugins: [
       new HtmlWebpackPlugin({
