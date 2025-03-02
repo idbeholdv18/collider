@@ -36,6 +36,9 @@ export default (env: WebpackEnv): Configuration => {
     },
     resolve: {
       extensions: [".tsx", ".ts", ".js"],
+      alias: {
+        "@": path.resolve(__dirname, "src"),
+      },
     },
     plugins: [
       new HtmlWebpackPlugin({
