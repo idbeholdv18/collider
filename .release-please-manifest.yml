@@ -1,5 +1,0 @@
-version: 1
-releases:
-  - package-name: collider
-    repo-url: https://github.com/idbeholdv18/collider
-    changelog-path: CHANGELOG.md
