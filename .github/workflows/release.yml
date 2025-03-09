@@ -1,4 +1,4 @@
-name: Release
+name: Create PR to master
 
 on:
   push:
@@ -6,22 +6,17 @@ on:
       - "v*"
 
 jobs:
-  release:
+  create-pr:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: Set up GitHub CLI
+        uses: cli/cli@v2
         with:
-          node-version: "14"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Create release with release-please
-        run: npm run release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Нужно для работы с release-please
+      - name: Create Pull Request to master
+        run: gh pr create --base master --head development --title "Release PR" --body "Automated PR to merge development into master"
