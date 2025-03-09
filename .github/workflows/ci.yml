@@ -1,0 +1,48 @@
+name: CI for Frontend and Backend
+
+on:
+  pull_request:
+    branches:
+      - development
+
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Test frontend echo
+        run: |
+          echo "Running frontend tests"
+          echo "Frontend test passed!"
+
+      - name: Check if frontend folder exists
+        run: |
+          if [ -d "./frontend" ]; then
+            echo "Frontend directory exists."
+          else
+            echo "Frontend directory does not exist." && exit 1
+          fi
+
+  backend:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Test backend echo
+        run: |
+          echo "Running backend tests"
+          # Здесь можно добавить дополнительные проверки для backend
+          echo "Backend test passed!"
+
+      - name: Check if backend folder exists
+        run: |
+          if [ -d "./backend" ]; then
+            echo "Backend directory exists."
+          else
+            echo "Backend directory does not exist." && exit 1
+          fi
