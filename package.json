@@ -4,7 +4,8 @@
   "description": "An application for analyzing algorithms used in the construction of bounding boxes.",
   "main": "index.js",
   "scripts": {
-    "commit": "cz"
+    "commit": "cz",
+    "release": "release-please release --repo-url https://github.com/idbeholdv18/collider"
   },
   "keywords": [],
   "author": "",
