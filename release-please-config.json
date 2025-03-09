@@ -1,0 +1,7 @@
+{
+  "release-type": "node",
+  "bump-minor": true,
+  "bump-patch": true,
+  "changelog-path": "CHANGELOG.md",
+  "changelog-type": "default"
+}
