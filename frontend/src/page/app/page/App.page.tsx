@@ -4,7 +4,7 @@ export interface AppPageProps {}
 
 export const AppPage: FC<AppPageProps> = () => {
   return (
-    <div>
+    <div className="h-screen ms-96">
       <h1>AppPage</h1>
     </div>
   );
