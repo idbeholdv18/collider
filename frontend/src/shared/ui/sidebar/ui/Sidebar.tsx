@@ -7,7 +7,7 @@ interface SidebarProps {
 }
 type T_Sidebar = React.FC<SidebarProps> & T_SidebarComponents;
 
-export const SidebarComponent: T_Sidebar = (props) => {
+export const SidebarComponent: React.FC<SidebarProps> = (props) => {
   return <SidebarProvider>{props.children}</SidebarProvider>;
 };
 
