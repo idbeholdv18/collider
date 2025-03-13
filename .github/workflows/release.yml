@@ -28,9 +28,14 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           npm run release
-          git add CHANGELOG.md package.json
-          git commit -m "chore(release): update changelog"
-          git push --follow-tags origin master
+          
+          if git diff --exit-code; then
+            echo "No changes to commit."
+          else
+            git add CHANGELOG.md package.json
+            git commit -m "chore(release): update changelog"
+            git push --follow-tags origin master
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
