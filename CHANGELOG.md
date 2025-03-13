@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/idbeholdv18/collider/compare/v0.0.2...v0.0.3) (2025-03-13)
+
+
+### Bug Fixes
+
+* pkg-lock throw out ([93879ff](https://github.com/idbeholdv18/collider/commit/93879fffcbcb8eb319b2386e2992480d1f14b3bb))
+
 ### 0.0.2 (2025-03-13)
 
 
