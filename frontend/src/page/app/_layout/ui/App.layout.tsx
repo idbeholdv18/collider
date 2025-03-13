@@ -1,3 +1,5 @@
+import { Sidebar } from "@/widget/sidebar";
+import { Sidebar as SidebarProvider } from "@/shared/ui/sidebar";
 import { FC } from "react";
 import { Outlet } from "react-router-dom";
 
@@ -6,8 +8,10 @@ export interface AppLayoutProps {}
 export const AppLayout: FC<AppLayoutProps> = () => {
   return (
     <div>
-      <h1>App layout</h1>
-      <Outlet />
+      <SidebarProvider>
+        <Sidebar />
+        <Outlet />
+      </SidebarProvider>
     </div>
   );
 };

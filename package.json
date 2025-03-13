@@ -1,0 +1,23 @@
+{
+  "name": "collider",
+  "version": "0.0.1",
+  "description": "An application for analyzing algorithms used in the construction of bounding boxes.",
+  "main": "index.js",
+  "scripts": {
+    "commit": "cz",
+    "release": "standard-version",
+    "postrelease": "git push --follow-tags origin master && git push origin master --force"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0",
+    "standard-version": "^9.5.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
