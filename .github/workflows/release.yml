@@ -28,7 +28,7 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           npm run release
-          git add CHANGELOG.md package.json package-lock.json
+          git add CHANGELOG.md package.json
           git commit -m "chore(release): update changelog"
           git push --follow-tags origin master
         env:
