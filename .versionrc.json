@@ -1,0 +1,6 @@
+{
+  "branches": ["development"],
+  "skip": {
+    "tag": false
+  }
+}
