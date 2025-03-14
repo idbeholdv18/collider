@@ -1,23 +1,20 @@
 import clsx from "clsx";
 import { FC, useCallback } from "react";
 import { useDropzone } from "react-dropzone";
+import { useUploadImageMutation } from "../api/image.api";
 
 interface ImageUploaderProps {}
 
 export const ImageUploader: FC<ImageUploaderProps> = () => {
+  const [uploadImage, result] = useUploadImageMutation();
   const onDrop = useCallback((acceptedFiles: File[]) => {
     acceptedFiles.forEach((file) => {
-      const reader = new FileReader();
-      reader.onabort = () => console.log("file reading was aborted");
-      reader.onerror = () => console.log("file reading has failed");
-      reader.onload = () => {
-        const binaryStr = reader.result;
-        console.log(binaryStr);
-      };
-      reader.readAsArrayBuffer(file);
+      const formData = new FormData();
+      formData.append("image", file);
+      uploadImage(formData);
     });
   }, []);
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+  const { getRootProps, getInputProps } = useDropzone({
     onDrop,
     accept: { "image/png": [".png"] },
     maxFiles: 1,
