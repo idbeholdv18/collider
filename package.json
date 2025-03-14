@@ -1,6 +1,6 @@
 {
   "name": "collider",
-  "version": "0.0.7",
+  "version": "0.13.7",
   "description": "An application for analyzing algorithms used in the construction of bounding boxes",
   "main": "index.js",
   "scripts": {
@@ -12,12 +12,21 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "conventional-changelog-conventionalcommits": "^8.0.0",
     "cz-conventional-changelog": "^3.3.0",
     "standard-version": "^9.5.0"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "standard-version": {
+    "branches": [
+      "development"
+    ],
+    "skip": {
+      "tag": false
     }
   }
 }
