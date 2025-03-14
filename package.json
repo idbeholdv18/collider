@@ -1,6 +1,6 @@
 {
   "name": "collider",
-  "version": "0.13.8",
+  "version": "0.13.9",
   "description": "An application for analyzing algorithms used in the construction of bounding boxes.",
   "main": "index.js",
   "scripts": {

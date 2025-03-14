@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.13.9](https://github.com/idbeholdv18/collider/compare/v0.13.7...v0.13.9) (2025-03-14)
+
+
+### Bug Fixes
+
+* git user info ([cda7d73](https://github.com/idbeholdv18/collider/commit/cda7d730096277ac7b9b8db1621e930e4a49507b))
+
 ### [0.13.8](https://github.com/idbeholdv18/collider/compare/v0.13.7...v0.13.8) (2025-03-14)
 
 
