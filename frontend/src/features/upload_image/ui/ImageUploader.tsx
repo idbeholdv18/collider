@@ -2,16 +2,22 @@ import clsx from "clsx";
 import { FC, useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import { useUploadImageMutation } from "../api/image.api";
+import { useAppDispatch } from "@/shared/store/hooks";
+import { imageActions } from "../slice/image.slice";
 
 interface ImageUploaderProps {}
 
 export const ImageUploader: FC<ImageUploaderProps> = () => {
+  const dispatch = useAppDispatch();
   const [uploadImage, result] = useUploadImageMutation();
   const onDrop = useCallback((acceptedFiles: File[]) => {
-    acceptedFiles.forEach((file) => {
+    acceptedFiles.forEach(async (file) => {
       const formData = new FormData();
       formData.append("image", file);
-      uploadImage(formData);
+      try {
+        const res = await uploadImage(formData).unwrap();
+        dispatch(imageActions.setImageUrl(res));
+      } catch (e) {}
     });
   }, []);
   const { getRootProps, getInputProps } = useDropzone({
