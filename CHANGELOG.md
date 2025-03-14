@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/idbeholdv18/collider/compare/v0.0.5...v0.0.6) (2025-03-14)
+
+
+### Features
+
+* **frontend:** getting image ([c45bd86](https://github.com/idbeholdv18/collider/commit/c45bd8667bc7e5452fb1a96862612210788e3215))
+* **frontend:** s3 upload ([bd1614a](https://github.com/idbeholdv18/collider/commit/bd1614afa1c32e435f79a2d0ddd4774135b586e9))
+
+
+### Bug Fixes
+
+* **backend:** cors ([c62a9d0](https://github.com/idbeholdv18/collider/commit/c62a9d0f767f2c7124a7d0ef16a901903968d020))
+
 ### 0.0.5 (2025-03-13)
 
 
