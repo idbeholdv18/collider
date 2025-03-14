@@ -11,6 +11,7 @@ export default (env: WebpackEnv): Configuration => {
   return {
     mode: env.mode,
     entry: "./src/index.tsx",
+    target: "web",
     output: {
       filename: "[contenthash].[name].js",
       path: path.resolve(__dirname, "dist"),
