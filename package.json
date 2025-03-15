@@ -1,12 +1,13 @@
 {
   "name": "collider",
-  "version": "0.13.9",
+  "version": "0.13.12",
   "description": "An application for analyzing algorithms used in the construction of bounding boxes.",
   "main": "index.js",
   "scripts": {
     "commit": "cz",
     "release": "standard-version",
-    "postrelease": "git push --follow-tags origin master && git push origin master --force"
+    "postrelease": "git push --follow-tags origin $(git rev-parse --abbrev-ref HEAD) && git push origin $(git rev-parse --abbrev-ref HEAD) --force",
+    "release:minor": "standard-version -- --release-as minor && npm run postrelease"
   },
   "keywords": [],
   "author": "",

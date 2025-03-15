@@ -8,23 +8,23 @@ import { SidebarCloseIcon } from "./Sidebar.Icon.Close";
 
 export interface SidebarProps {}
 
-const testFilterArray = [1, 2, 3];
+const testFilterArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 export const Sidebar: FC<SidebarProps> = () => {
   const { isOpen } = useSidebar();
   return (
     <div
       className={clsx(
-        "fixed h-screen w-80 lg:w-96 bg-background-contranst border border-e-border-primary pt-14 transition-transform",
+        "z-10 fixed h-screen w-80 lg:w-96 bg-background-contranst border border-e-border-primary pt-14 transition-transform",
         !isOpen && "max-lg:-translate-x-80"
       )}
     >
-      <div className='flex flex-col p-3 gap-6'>
-        <SharedSidebar.Toggle
-          className={clsx("lg:hidden absolute top-16 -right-8")}
-          closeIcon={<SidebarCloseIcon />}
-          openIcon={<SidebarOpenIcon />}
-        />
+      <SharedSidebar.Toggle
+        className={clsx("lg:hidden absolute top-16 -right-8 z-10")}
+        closeIcon={<SidebarCloseIcon />}
+        openIcon={<SidebarOpenIcon />}
+      />
+      <div className='flex flex-col p-3 gap-6 h-full overflow-y-scroll'>
         <ImageModule />
         {testFilterArray.map((filter, idx) => (
           <FilterModule key={idx} />
